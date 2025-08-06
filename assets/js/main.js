@@ -93,7 +93,7 @@
         }
     });
 
-    $('.vendor-carousel').owlCarousel({
+    $('.vendor-carousel.partners').owlCarousel({
         loop: true, // التكرار بعد آخر عنصر
         margin: 25,
         dots: true,
@@ -107,40 +107,54 @@
             992: { items: 7 }
         }
     });
-  $('.strap').owlCarousel({
-    loop: true,
-    margin: 1,
-    dots: false,
-    autoplay: true,
-    autoplayTimeout: 1000,          // Minimal delay to keep it moving
-    autoplaySpeed: 5000,         // Controls scroll speed
-    smartSpeed: 5000,
-    slideTransition: 'linear',   // Smooth, no easing
-    center: false,
-    responsive: {
-        0: { items: 2 },
-        576: { items: 5 },
-        768: { items: 6 },
-        992: { items: 10}
-    }
-});
- $('.strap2').owlCarousel({
-    loop: true,
-    margin: 1,
-    dots: false,
-    autoplay: true,
-    autoplayTimeout: 1000,          // Minimal delay to keep it moving
-    autoplaySpeed: 5000,         // Controls scroll speed
-    smartSpeed: 5000,
-    slideTransition: 'linear',   // Smooth, no easing
-    center: false,
-    responsive: {
-        0: { items: 2 },
-        576: { items: 5 },
-        768: { items: 6 },
-        992: { items: 10}
-    }
-});
+    $('.strap').owlCarousel({
+        loop: true,
+        margin: 1,
+        dots: false,
+        autoplay: true, // التشغيل التلقائي
+        autoplayTimeout: 3000, // تغيير الشرائح كل 3 ثواني
+        smartSpeed: 1000,
+        slideTransition: 'linear',   // Smooth, no easing
+        center: false,
+        responsive: {
+            0: { items: 2 },
+            576: { items: 5 },
+            768: { items: 6 },
+            992: { items: 10 }
+        }
+    });
+    $('.strap2').owlCarousel({
+        loop: true,
+        margin: 1,
+        dots: false,
+        autoplay: true,
+        autoplay: true, // التشغيل التلقائي
+        autoplayTimeout: 3000, // تغيير الشرائح كل 3 ثواني
+        smartSpeed: 1000,
+        slideTransition: 'linear',   // Smooth, no easing
+        center: false,
+        responsive: {
+            0: { items: 2 },
+            576: { items: 5 },
+            768: { items: 6 },
+            992: { items: 10 }
+        }
+    });
+    $('.strap3').owlCarousel({
+        loop: true, // التكرار بعد آخر عنصر
+        margin: 1,
+        dots: true,
+        autoplay: true, // التشغيل التلقائي
+        autoplayTimeout: 3000, // تغيير الشرائح كل 3 ثواني
+        smartSpeed: 1000,
+        center: true,
+        responsive: {
+            0: { items: 2 },
+            576: { items: 3 },
+            768: { items: 4 },
+            992: { items: 8 }
+        }
+    });
     // Custom carousel
     $(".custom-carousel").owlCarousel({
         autoWidth: true,
@@ -234,6 +248,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 const panels = document.querySelectorAll('.panel');
+const panelContainer = document.querySelector('.panel-container');
 
 panels.forEach(panel => {
     panel.addEventListener('mouseenter', () => {
@@ -244,6 +259,14 @@ panels.forEach(panel => {
     panel.addEventListener('mouseleave', () => {
         removeActiveClasses();
     });
+});
+
+// When mouse leaves the whole container, make the first panel active again
+panelContainer.addEventListener('mouseleave', () => {
+    removeActiveClasses();
+    if (panels.length > 0) {
+        panels[0].classList.add('active');
+    }
 });
 
 function removeActiveClasses() {

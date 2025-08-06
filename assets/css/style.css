@@ -409,6 +409,12 @@ h4 {
     height: 11px;
 }
 
+@media(min-width:767px) {
+    .hero-btn a {
+        /* min-width: 225px; */
+    }
+}
+
 @media(max-width:768px) {
     .hero-title {
         font-size: 24px;
@@ -467,6 +473,7 @@ h4 {
     display: flex;
     align-items: center;
     height: 50px;
+    text-wrap: nowrap;
 }
 
 .strap2 {
@@ -557,6 +564,10 @@ h4 {
 
 
 /* <!-- ======================= Clientss start --> */
+.logoes {
+    background-color: #fdfdfd !important;
+}
+
 .vendor-carousel .owl-item {
     display: flex;
     ;
@@ -569,9 +580,19 @@ h4 {
     height: 60px;
 }
 
+.vendor-carousel .owl-item img {
+    height: 60px;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+}
+
+.vendor-carousel .owl-item:hover img {
+    filter: grayscale(0%);
+}
+
 /* <!-- =======================Clients end --> */
 
-/* ------------------------ Activities Start ----------------------------------------> */
+/*~------------------------ Services Start ----------------------------------------> */
 
 .panel {
     background-size: cover;
@@ -589,7 +610,7 @@ h4 {
 }
 
 .panel::after {
-background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.4) 100%);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.4) 100%);
     display: flex;
     position: absolute;
     top: 0;
@@ -598,8 +619,8 @@ background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.4) 100%
     right: 0;
     left: 0;
 }
-.service-content
-{
+
+.service-content {
     position: absolute;
     bottom: 10px;
     z-index: 4;
@@ -607,15 +628,16 @@ background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.4) 100%
     margin: 0;
     opacity: 0;
 }
-.panel.active .service-content
-{
+
+.panel.active .service-content {
     opacity: 1;
 }
-.panel.active::after
-{
+
+.panel.active::after {
     background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 64.95%);
     opacity: 1;
 }
+
 .panel:hover .service-content {
     opacity: 1;
 }
@@ -686,13 +708,315 @@ background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.4) 100%
     /* width: 90vw; */
 }
 
-/* ------------------------ Activities End ----------------------------------------> */
+/*~ ------------------------ Services End ----------------------------------------> */
+.industry-ctr {
+    background-color: #fcfcfc;
+}
 
-/* ~------------------------History Start --> */
-/* ~------------------------History End --> */
+.inddu {
+    z-index: 9;
+}
+
+.industry-card {
+    /* max-width: 287px; */
+    /* width: 100%; */
+    background-color: var(--secondary);
+    padding: 30px;
+}
+
+.industry-cat-title {
+    font-family: Poppins;
+    font-weight: 600;
+    font-size: 24px;
+    color: #fff;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.industry-cat-desc {
+    font-family: Poppins;
+    font-weight: 500;
+    font-size: 18px;
+    text-align: center;
+    text-transform: capitalize;
+    color: #fff;
+}
+
+.industry-card:hover {
+    background: var(--primary);
+    cursor: pointer;
+    box-shadow: 0px 16px 30px 0px #E6322E33;
+
+}
+
+.industry-card:hover .icon-product-cat img {
+    filter: brightness(0) saturate(100%) invert(32%) sepia(86%) saturate(6265%) hue-rotate(352deg) brightness(94%) contrast(101%);
+}
+
+/* ~------------------------CTA Start --> */
+.cta-ctr {
+    background: linear-gradient(4.99deg, rgba(0, 0, 0, 0.8) 3.94%, rgba(0, 0, 0, 0) 95.98%), url('../img/bg/cta.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.cta-card {
+    backdrop-filter: blur(20px);
+    background: #FFFFFF17;
+    max-width: 430px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+    gap: 15px;
+
+}
+
+.cta-sec-title {
+    font-family: Poppins;
+    font-weight: 600;
+    font-size: 28px;
+    text-align: center;
+    vertical-align: middle;
+    color: #fff;
+
+}
+
+.cta-desc {
+    font-family: Poppins;
+    font-weight: 400;
+    font-size: 16px;
+    text-align: center;
+    vertical-align: middle;
+    color: #fff;
+
+}
+
+.cta-logo {
+    width: 100px;
+    height: 100px;
+    margin-top: -50px;
+}
+
+/* ~------------------------CTA End --> */
 /* &------------------------team cards  Start --> */
-/* &------------------------team cards  End --> */
+.news-card-title {
+    font-family: Poppins;
+    font-weight: 600;
+    font-size: 24px;
+    color: #000;
+    margin-bottom: 0px !important;
+    text-align: start;
+    text-decoration: none;
+}
 
+.news-card {
+    text-decoration: none;
+
+
+}
+
+.news-card-desc {
+    font-family: Poppins;
+    font-weight: 400;
+    font-size: 18px;
+    color: #737373;
+    text-decoration: none;
+}
+
+.news-read,
+.news-read:hover {
+    font-family: Poppins;
+    font-weight: 400;
+    font-size: 16px;
+    text-decoration: underline;
+    color: var(--primary);
+}
+
+.news-card-img {
+    height: 260px;
+    object-fit: cover;
+    background-position: bottom;
+}
+
+.news-card-img-ct {
+    height: 260px;
+    overflow: hidden;
+    position: relative;
+}
+
+.news-card-img-ct::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 100%);
+    z-index: 1;
+}
+
+@media(min-width:767px) {
+    .view-all-news {
+        min-width: 225px;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+/* &------------------------team cards  End --> */
+.strap3 {
+    background-color: var(--primary);
+    /* transform: rotateZ(50deg); */
+    /* left: -36%; */
+    font-family: Poppins;
+    font-weight: 600;
+    font-style: SemiBold;
+    font-size: 22px;
+    text-transform: capitalize;
+    color: #fff;
+    height: 90px;
+    margin-bottom: 0;
+}
+
+.strap3 .item {
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    height: 90px;
+    width: fit-content;
+    font-family: Poppins;
+    font-weight: 500;
+    font-style: Medium;
+    text-wrap: nowrap;
+    font-size: 28px;
+    text-transform: uppercase;
+
+}
+
+.strap3 .dot {
+    color: #fff;
+    font-size: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90px;
+    padding: 0 10px;
+}
+
+fieldset {
+    border: 2px solid #E6322E;
+    position: absolute;
+    padding: 0px 80px;
+}
+
+.contact-left {
+    background-color: var(--secondary);
+    padding: 50px;
+    z-index: 0;
+}
+
+.contact-sec-title {
+    font-family: Poppins;
+    font-weight: 600;
+    font-style: SemiBold;
+    font-size: 50px;
+    color: #fff;
+    margin-top: -40px;
+    width: fit-content;
+    margin-left: 40px;
+    background-color: var(--secondary);
+}
+
+.contact-field {
+    background-color: transparent;
+    font-family: Poppins;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 20px;
+
+    border: 1px solid #FFFFFF;
+    border-radius: 0;
+    color: #fff;
+    margin-bottom: 20px;
+    height: 70px;
+}
+
+.contact-area {
+    background-color: transparent;
+    font-family: Poppins;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 20px;
+
+    border: 1px solid #FFFFFF;
+    border-radius: 0;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.contact-field::placeholder,
+.contact-area::placeholder {
+    color: #fff;
+    font-family: Poppins;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 20px;
+}
+
+.contact-btm {
+    font-family: Poppins;
+    font-weight: 500;
+    font-size: 20px;
+    width: 102.5px;
+    border-radius: 0;
+    height: 37px;
+    background-color: var(--primary);
+    color: #fff;
+    right: -50px;
+    bottom: -15px;
+}
+
+.map-img {
+    top: -52px;
+    bottom: -50px;
+    right: -76px;
+    left: 0;
+    z-index: 0;
+}
+
+form.col-md-6 {
+    padding: 0 90px 40px 90px;
+
+}
+
+.adress {
+    background-color: var(--primary);
+    padding: 40px 30px ;
+    width: 300px;
+    /* top: -52px; */
+    bottom: -50px;
+    right: -76px;
+}
+
+.adress h4 {
+    font-family: Poppins;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 25px;
+    color: #fff;
+}
+
+.adress p {
+    font-family: Poppins;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 15px;
+    color: #fff;
+}
 
 /*//-------------------------- Footer  Start------------------------------------------ */
 footer {
