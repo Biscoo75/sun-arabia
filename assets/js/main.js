@@ -93,7 +93,20 @@
         }
     });
 
-    $('.vendor-carousel.partners').owlCarousel({
+    $('.vendor-carousel').owlCarousel({
+        loop: true, // التكرار بعد آخر عنصر
+        margin: 25,
+        dots: true,
+        autoplay: true, // التشغيل التلقائي
+        autoplayTimeout: 3000, // تغيير الشرائح كل 3 ثواني
+        smartSpeed: 1000,
+        responsive: {
+            0: { items: 1 },
+            576: { items: 5 },
+            768: { items: 6 },
+            992: { items: 7 }
+        }
+    });  $('.vendor-carousel2.partners').owlCarousel({
         loop: true, // التكرار بعد آخر عنصر
         margin: 25,
         dots: true,
